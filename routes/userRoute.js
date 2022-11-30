@@ -66,8 +66,9 @@ router.post("/login", async(req, res) => {
                return res.status(400).json({message: 'Sxal password'  })
             }
             const token = generateAccessToken(user._id, user.roles)
-            return res.json({token})
-
+          return res.json({token:token, name:user.name})
+          
+         //  return res.send(JSON.stringify({token:token, user:user.name}))
          // if (user.length > 0) {
             
          //    const currentUser = {
