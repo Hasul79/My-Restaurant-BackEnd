@@ -4,9 +4,8 @@ const User = require('../models/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
  const {body, validationResult} = require('express-validator')
-const {secret} = require('../config')
-
-
+const secret = process.env.SECRET
+console.log(secret)
     const generateAccessToken = (id, roles) => {
        const payload = {
          id,

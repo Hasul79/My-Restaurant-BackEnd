@@ -3,7 +3,14 @@ const express = require("express");
 const Pizza = require('./models/pizzaModel');
 const cors = require('cors')
 const router= require('./routes/nodMailerRouter')
+// const authRoute = require("./routes/auth");
+// const passport = require('passport');
+// const cookieSession = require('cookie-session');
+// const passportStrategy = require("./passport");
 
+const pizzasRoute = require('./routes/pizzasRoute')
+const userRoute = require('./routes/userRoute')
+const ordersRoute = require('./routes/ordersRoute')
 
 
 const app = express();
@@ -13,10 +20,30 @@ app.use(cors());
 app.use(router);
 
 
+// app.use(
+// 	cookieSession({
+// 		name: "session",
+// 		keys: ["cyberwolve"],
+// 		maxAge: 24 * 60 * 60 * 100,
+// 	})
+// );
 
-const pizzasRoute = require('./routes/pizzasRoute')
-const userRoute = require('./routes/userRoute')
-const ordersRoute = require('./routes/ordersRoute')
+
+// app.use(passport.initialize());
+// app.use(passport.session());
+
+// app.use(
+// 	cors({
+// 		origin: "http://localhost:3000",
+// 		methods: "GET,POST,PUT,DELETE",
+// 		credentials: true,
+// 	})
+// );
+
+// app.use("/auth", authRoute);
+
+
+
 
 
 
@@ -28,52 +55,7 @@ app.get("/", (req, res) => {
 });
 
 
-// app.get("/getpizzas", (req, res) => {
-//   Pizza.find({}, (err, docs)=>{
-//     if(err){
-//         console.log(err);
-//     }
-//     else{
-//         res.send(docs)
-//     }
-//   })
-// });
 
-// const { model } = require('mongoose');
- 
-
-// const nodemailer = require('nodemailer');
-
-
-// function sendMail(){
-// let mailTransporter = nodemailer.createTransport({
-//     service:  "gmail",
-//     auth:{
-//         user:"hasmikminasyan.1979@gmail.com",
-//         pass: "vnyfpgeuzstexyek"
-//     }
-// })
-// let details = {
-//     from :"hasmikminasyan.1979@gmail.com",
-//     to: "hatuk2@mail.ru",
-//    subject: "testing our nodemailer",
-//     text: "Hello my dear"
-// }
-
-// mailTransporter.sendMail(details, (err)=>{
-//     if(err){
-//         console.log("it has en error", err )
-//     }
-//     else {
-//         console.log("email has sent!")
-//     }
-//  })
-// }
-
-// app.post('/sendmail', (req, res)=>{
-//     sendMail()
-//     res.send("Բարի գալուստ My pizza")
-// })
 
 const port = process.env.PORT || 7000;
 

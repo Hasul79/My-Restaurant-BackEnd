@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const { v4: uuidv4 } = require('uuid');
+const stripeKey = process.env.STRIPE_KEY
 
-const stripe = require("stripe")("sk_test_51M3yf9Kjj4lP0pf1hIZMaR9fPrKr0CsKFu7vbo4mWMFVmiuUlbrAnuMS5UTwLYRRh0wagBOmHPNs3BbNJzMaVvr800lT0Ohobp")
+const stripe = require("stripe")(stripeKey)
 
 const Order = require('../models/orderModel')
 
@@ -63,7 +64,7 @@ router.post("/placeorder", async (req, res) => {
 router.post("/getuserorders" , async(req, res) => {
     const { userid } = req.body 
     
-  //  console.log(userId )
+  //  console.log(userid )
 
  try {
      const orders = await Order.find({userid : userid}).sort({_id : -1})
@@ -71,7 +72,7 @@ router.post("/getuserorders" , async(req, res) => {
      res.send(orders)
 
   // console.log(orders)
-  //  console.log(userId)
+  //  console.log(userid)
 
  }catch(error){
      return res.status(400).json({message : 'Something went wrong'});
