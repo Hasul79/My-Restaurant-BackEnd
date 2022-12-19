@@ -15,6 +15,7 @@
 [Dotenv](https://www.npmjs.com/package/dotenv)<br />
 [Express Validator](https://express-validator.github.io/docs/)<br>
 [JWT](https://github.com/auth0/node-jsonwebtoken)<br>
+[RegExp](https://projects.verou.me/regexplained/)<br />
 [Bcrypt](https://www.npmjs.com/package/bcrypt)<br />
 [Cors](https://www.npmjs.com/package/cors)<br />
 [Nodmailer](https://nodemailer.com/about/)<br />
