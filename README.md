@@ -22,6 +22,6 @@
 [Stripe](https://stripe.com/)<br />
 
 
-```git clone https://github.com/Hasul79/My-Restaurant-BackEnd <br />
-npm install <br />
-nodemon server.js```
+`git clone https://github.com/Hasul79/My-Restaurant-BackEnd <br />`
+`npm install <br />`
+`nodemon server.js`
