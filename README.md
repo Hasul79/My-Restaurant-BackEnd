@@ -23,6 +23,7 @@
 
 ```
 git clone https://github.com/Hasul79/My-Restaurant-BackEnd 
+cd My-Restaurant-BackEnd
 npm install 
 nodemon server.js
 ```
